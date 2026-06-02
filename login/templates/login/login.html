@@ -3,17 +3,30 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-    <form action="{% url 'login' %}" method="post">
-        {% csrf_token %}
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
-        <button type="submit">Login</button>
-    </form>
+<div class="login-container">
+    <div class="login-card">
+        <h2>Welcome Back</h2>
+        
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <div class="input-group">
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn-submit">Login</button>
+        </form>
 
-    <p>Don't have an account?</p>
-    <a href="{% url 'signup' %}">Signup</a>
+        <div class="login-footer">
+            <p>Don't have an account? <a href="{% url 'signup' %}">Signup</a></p>
+        </div>
 
-    {% if error %}
-        <p>{{ error }}</p>
-    {% endif %}
+        {% if error %}
+            <div class="error-message">
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}

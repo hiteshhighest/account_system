@@ -1,0 +1,273 @@
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* Center the login card on the screen */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Card Styling */
+.login-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-card h2 {
+    margin-bottom: 24px;
+    color: #1a1a1a;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Input Fields */
+.input-group {
+    margin-bottom: 16px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #4f46e5;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(79, 70, 225, 0.1);
+}
+
+/* Submit Button */
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 8px;
+}
+
+.btn-submit:hover {
+    background-color: #4338ca;
+}
+
+/* Footer & Signup Link */
+.login-footer {
+    margin-top: 24px;
+    font-size: 14px;
+    color: #666;
+}
+
+.login-footer a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Error Alert */
+.error-message {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #fef2f2;
+    border: 1px solid #fee2e2;
+    border-radius: 6px;
+    color: #dc2626;
+    font-size: 14px;
+    text-align: left;
+}
+
+/* --- Dashboard Styles --- */
+
+.dashboard-wrapper {
+    min-height: 100vh;
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+/* Header / Navbar Navigation */
+.dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 16px 40px;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.dash-header .logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dash-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.welcome-msg {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* Slick Logout Button */
+.btn-logout {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f1f5f9;
+    color: #64748b;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+    background-color: #fee2e2;
+    color: #ef4444;
+}
+
+/* Main Content Area */
+.dash-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Hero Title Section */
+.hero-section {
+    margin-bottom: 32px;
+}
+
+.hero-section h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.hero-section p {
+    color: #64748b;
+    font-size: 16px;
+}
+
+/* Layout Grid for Cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+/* Interactive Dash Cards */
+.dash-card {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.dash-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.04);
+    border-color: #cbd5e1;
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Soft accent colors for icons */
+.card-icon.blue { background-color: #eff6ff; }
+.card-icon.purple { background-color: #f5f3ff; }
+.card-icon.green { background-color: #f0fdf4; }
+
+.dash-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.dash-card p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Aligns links if text lengths vary */
+}
+
+.card-link {
+    color: #4f46e5;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.card-link:hover {
+    color: #312e81;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .dash-header {
+        padding: 16px 20px;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+    .dash-nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

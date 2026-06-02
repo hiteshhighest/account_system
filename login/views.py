@@ -58,7 +58,7 @@ def login_view(request):
 
 def home(request):
     if request.user.is_authenticated:
-        return render(request, 'login/index.html')
+        return render(request, 'login/index.html', {'user': request.user.first_name})
     else:
         return redirect('login')
     

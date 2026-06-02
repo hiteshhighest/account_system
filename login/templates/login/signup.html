@@ -2,22 +2,76 @@
 
 {% block title %}Signup{% endblock %}
 
+{% block head %}
+<style>
+    /* --- Signup Specific Additions --- */
+
+    /* Places First Name and Last Name side-by-side */
+    .input-row {
+        display: flex;
+        gap: 12px;
+    }
+
+    .input-row .input-group {
+        flex: 1;
+    }
+
+    /* Optional: Slight tweak to signup card spacing because it has more fields */
+    .login-container {
+        padding: 40px 20px; /* Gives more breathing room on small screens */
+    }
+
+    .signup-card {
+        max-width: 500px; 
+    }
+</style>
+{% endblock %}
+
 {% block content %}
-    <form action="{% url 'signup' %}" method="post">
-        {% csrf_token %}
-        <input type="text" name="fname" placeholder="First Name">
-        <input type="text" name="lname" placeholder="Last Name">
-        <input type="text" name="username" placeholder="Username">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password1" placeholder="Password">
-        <input type="password" name="password2" placeholder="Confirm Password">
-        <button type="submit">Signup</button>
-    </form>
+<div class="login-container">
+    <div class="login-card signup-card">
+        <h2>Create Account</h2>
+        
+        <form action="{% url 'signup' %}" method="post">
+            {% csrf_token %}
+            
+            <div class="input-row">
+                <div class="input-group">
+                    <input type="text" name="fname" placeholder="First Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="lname" placeholder="Last Name" required>
+                </div>
+            </div>
 
-    {% if error %}
-        <p>{{error}}</p>
-    {% endif %}
+            <div class="input-group">
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" name="password1" placeholder="Password" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" name="password2" placeholder="Confirm Password" required>
+            </div>
+            
+            <button type="submit" class="btn-submit">Signup</button>
+        </form>
 
-    <p>Already have an account?</p>
-    <a href="{% url 'login' %}">Login</a>
+        {% if error %}
+            <div class="error-message">
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
+
+        <div class="login-footer">
+            <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+        </div>
+    </div>
+</div>
 {% endblock %}
